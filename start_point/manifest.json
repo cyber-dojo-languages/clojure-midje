@@ -11,9 +11,11 @@
 
   "image_name": "cyberdojofoundation/clojure_midje",
 
+  "runner_choice": "stateless",
+
+  "max_seconds": 20,
+
   "filename_extension" : ".clj",
 
-  "tab_size": 2,
-
-  "runner_choice": "stateless"
+  "tab_size": 2
 }

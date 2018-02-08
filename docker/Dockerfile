@@ -1,4 +1,4 @@
-FROM cyberdojofoundation/clojure:1.8.0
+FROM cyberdojofoundation/clojure
 LABEL maintainer=frederic.merizen@soft-xki.com
 
 ENV MIDJE_COLORIZE=false

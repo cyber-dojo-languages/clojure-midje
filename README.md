@@ -1,4 +1,4 @@
-# gcc-assert
+# Clojure, midje
 
-![Build Status](https://travis-ci.org/cyber-dojo-languages/gcc-assert.svg?branch=master)
+![Build Status](https://travis-ci.org/cyber-dojo-languages/clojure-midje.svg?branch=master)
 

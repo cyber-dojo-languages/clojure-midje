@@ -15,7 +15,7 @@
 
   "max_seconds": 20,
 
-  "filename_extension" : ".clj",
+  "filename_extension": ".clj",
 
   "tab_size": 2
 }

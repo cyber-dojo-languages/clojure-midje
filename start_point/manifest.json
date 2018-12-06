@@ -11,11 +11,16 @@
 
   "image_name": "cyberdojofoundation/clojure_midje",
 
-  "runner_choice": "stateless",
-
   "max_seconds": 20,
 
   "filename_extension": ".clj",
 
-  "tab_size": 2
+  "hidden_filenames": [
+    "target/classes/META-INF/maven/.*/pom\\.properties",
+    "target/stale/leiningen\\.core\\.classpath\\.extract-native-dependencies"
+  ],
+
+  "tab_size": 2,
+
+  "runner_choice": "stateless"
 }

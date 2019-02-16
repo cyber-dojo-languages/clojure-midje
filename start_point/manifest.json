@@ -20,7 +20,5 @@
     "target/stale/leiningen\\.core\\.classpath\\.extract-native-dependencies"
   ],
 
-  "tab_size": 2,
-
-  "runner_choice": "stateless"
+  "tab_size": 2
 }

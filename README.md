@@ -1,4 +1,3 @@
-
 [![CircleCI](https://circleci.com/gh/cyber-dojo-languages/clojure-midje.svg?style=svg)](https://circleci.com/gh/cyber-dojo-languages/clojure-midje)
 
 ## display_name="Clojure, Midje"

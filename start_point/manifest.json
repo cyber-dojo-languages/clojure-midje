@@ -1,24 +1,18 @@
 
 {
+  "image_name": "cyberdojofoundation/clojure_midje",
   "display_name": "Clojure, Midje",
-
   "visible_filenames": [
     "hiker_test.clj",
     "hiker.clj",
     "cyber-dojo.sh",
     "project.clj"
   ],
-
-  "image_name": "cyberdojofoundation/clojure_midje",
-
   "max_seconds": 20,
-
-  "filename_extension": ".clj",
-
+  "tab_size": 2,
+  "filename_extension": [ ".clj" ],
   "hidden_filenames": [
     "target/classes/META-INF/maven/.*/pom\\.properties",
     "target/stale/leiningen\\.core\\.classpath\\.extract-native-dependencies"
-  ],
-
-  "tab_size": 2
+  ]
 }

@@ -1,5 +1,6 @@
-FROM cyberdojofoundation/clojure:2a20bee
+FROM ghcr.io/cyber-dojo-languages/clojure:9a28837
 LABEL maintainer=frederic.merizen@soft-xki.com
+LABEL maintainer=jon@jaggersoft.com
 
 ENV MIDJE_COLORIZE=false
 
@@ -8,6 +9,5 @@ COPY project.clj /tmp
 RUN cd /tmp \
  && lein deps \
  && lein midje --help \
- && chown -R nobody /.m2
+ && chown -R sandbox:sandbox /.m2
 
-COPY red_amber_green.rb /usr/local/bin

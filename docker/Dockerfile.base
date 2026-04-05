@@ -3,6 +3,7 @@ LABEL maintainer=frederic.merizen@soft-xki.com
 LABEL maintainer=jon@jaggersoft.com
 
 ENV MIDJE_COLORIZE=false
+ENV NO_COLOR=1
 
 COPY project.clj /tmp
 

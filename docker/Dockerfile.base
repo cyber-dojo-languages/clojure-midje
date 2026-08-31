@@ -1,4 +1,4 @@
-FROM ghcr.io/cyber-dojo-languages/clojure:9a28837
+FROM ghcr.io/cyber-dojo-languages/clojure:9d29387
 LABEL maintainer=frederic.merizen@soft-xki.com
 LABEL maintainer=jon@jaggersoft.com
 
@@ -11,4 +11,11 @@ RUN cd /tmp \
  && lein deps \
  && lein midje --help \
  && chown -R sandbox:sandbox /.m2
+
+# Dumped here so that every run can replay it instead of loading the same
+# classes from the jars again. It costs about 40MB of image and saves about a
+# fifth of every run. The script explains which classes and why.
+COPY dump_cds_archive.sh /tmp
+RUN bash /tmp/dump_cds_archive.sh \
+ && rm /tmp/dump_cds_archive.sh /tmp/project.clj
 

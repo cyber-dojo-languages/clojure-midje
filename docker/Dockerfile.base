@@ -9,13 +9,14 @@ COPY project.clj /tmp
 
 RUN cd /tmp \
  && lein deps \
- && lein midje --help \
  && chown -R sandbox:sandbox /.m2
 
-# Dumped here so that every run can replay it instead of loading the same
-# classes from the jars again. It costs about 40MB of image and saves about a
-# fifth of every run. The script explains which classes and why.
-COPY dump_cds_archive.sh /tmp
-RUN bash /tmp/dump_cds_archive.sh \
- && rm /tmp/dump_cds_archive.sh /tmp/project.clj
-
+# A kata's test run reads the three files this leaves behind. It loads midje
+# from class files compiled here instead of compiling midje's source again,
+# replays an archive of the classes that loading them needs, and takes the
+# classpath as given instead of starting lein to ask for it. The script explains
+# why compiling midje is what makes the archive worth anything.
+COPY run_fact_files.clj /
+COPY bake_aot_classpath_and_cds_archive.sh /tmp
+RUN bash /tmp/bake_aot_classpath_and_cds_archive.sh \
+ && rm -rf /tmp/bake_aot_classpath_and_cds_archive.sh /tmp/project.clj /tmp/aot

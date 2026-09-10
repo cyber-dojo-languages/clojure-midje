@@ -1,4 +1,4 @@
-FROM ghcr.io/cyber-dojo-languages/clojure:9d29387
+FROM ghcr.io/cyber-dojo-languages/clojure:7a1bf4d
 LABEL maintainer=frederic.merizen@soft-xki.com
 LABEL maintainer=jon@jaggersoft.com
 

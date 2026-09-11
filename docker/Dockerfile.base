@@ -1,11 +1,13 @@
-FROM ghcr.io/cyber-dojo-languages/clojure:7a1bf4d
+FROM ghcr.io/cyber-dojo-languages/clojure:19f8bda
 LABEL maintainer=frederic.merizen@soft-xki.com
 LABEL maintainer=jon@jaggersoft.com
 
 ENV MIDJE_COLORIZE=false
 ENV NO_COLOR=1
 
-COPY project.clj /tmp
+COPY write_project_clj.sh /tmp
+RUN bash /tmp/write_project_clj.sh \
+ && rm /tmp/write_project_clj.sh
 
 RUN cd /tmp \
  && lein deps \

@@ -1,4 +1,4 @@
-FROM ghcr.io/cyber-dojo-languages/clojure:19f8bda
+FROM ghcr.io/cyber-dojo-languages/clojure:c0ce7a7
 LABEL maintainer=frederic.merizen@soft-xki.com
 LABEL maintainer=jon@jaggersoft.com
 
@@ -9,8 +9,11 @@ COPY write_project_clj.sh /tmp
 RUN bash /tmp/write_project_clj.sh \
  && rm /tmp/write_project_clj.sh
 
+COPY record_midje_version.sh /tmp
 RUN cd /tmp \
  && lein deps \
+ && bash /tmp/record_midje_version.sh \
+ && rm /tmp/record_midje_version.sh \
  && chown -R sandbox:sandbox /.m2
 
 # A kata's test run reads the three files this leaves behind. It loads midje
